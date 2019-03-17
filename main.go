@@ -1,7 +1,10 @@
 package main
 
 import (
+	"bufio"
+	"fmt"
 	"math"
+	"os"
 
 	"github.com/gookit/color"
 )
@@ -18,13 +21,18 @@ func rainbow(i int) color.RGBColor {
 	return color.RGB(uint8(red), uint8(green), uint8(blue))
 }
 
-func Print(text string) {
-	for i, t := range text {
-		rainbow(i).Print(string(t))
+func Println(text string, i int) {
+	for index, t := range text {
+		rainbow(index + i*3).Print(string(t))
 	}
+	fmt.Println("")
 }
 
 func main() {
-	text := "あいうえおカキクケコさしすせそ\nたちつてとナニヌネノはひふへほ"
-	Print(text)
+	scanner := bufio.NewScanner(os.Stdin)
+	i := 0
+	for scanner.Scan() {
+		Println(scanner.Text(), i)
+		i++
+	}
 }

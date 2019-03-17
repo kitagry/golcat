@@ -6,10 +6,13 @@ This is inspired by [busyloop/lolcat](https://github.com/busyloop/lolcat)
 ## Install
 
 ```
-$ git clone https://github.com/kitagry/golcat && cd golcat
-$ go install
+$ go get github.com/kitagry/golcat
 ```
 
 ## Usage(Example)
 
+![alt text](./screenshot.png)
 
+## LICENSE
+
+MIT
